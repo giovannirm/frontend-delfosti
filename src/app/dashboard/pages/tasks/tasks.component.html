@@ -1,0 +1,29 @@
+<div class="content-spinner" *ngIf="isLoading">
+  <app-spinner />
+</div>
+
+<ng-container *ngIf="!isLoading">
+  <div class="container">
+    <ng-container *ngIf="isAdmin()">
+      <button mat-raised-button color="primary" (click)="addTask()">Añadir Tarea</button>
+    </ng-container>
+    <div cdkDropListGroup>
+      <ng-container *ngFor="let list of lists">
+        <div class="example-container">
+          <h2>{{ list.state }}</h2>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="list.tasks"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="example-box" (click)="showModal(task)" *ngFor="let task of list.tasks" cdkDrag>
+              {{ task.title }}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

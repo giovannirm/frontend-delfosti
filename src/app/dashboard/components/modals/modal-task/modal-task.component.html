@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Proyecto</h1>
+<div mat-dialog-content class="column">
+  <p>Ingrese los datos</p>
+  <mat-form-field>
+    <mat-label>Título</mat-label>
+    <input matInput [(ngModel)]="task.title" />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+    <textarea matInput
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"
+              [(ngModel)]="task.description"></textarea>
+  </mat-form-field>
+
+  <mat-radio-group class="example-radio-group" [(ngModel)]="task.state" aria-label="Selecciona un estado">
+    <mat-radio-button class="example-radio-button" *ngFor="let s of states" [value]="s">
+      {{s}}
+    </mat-radio-button>
+  </mat-radio-group>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="disabled" (click)="onNoClick()">
+    Cancelar
+  </button>
+  <button mat-raised-button color="primary" (click)="onSaveProject(task)">
+    Guardar
+  </button>
+</div>

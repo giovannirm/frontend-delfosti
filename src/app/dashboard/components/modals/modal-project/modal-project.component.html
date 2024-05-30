@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Proyecto</h1>
+<div mat-dialog-content>
+  <p>Ingrese los datos</p>
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="name" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="disabled" (click)="onNoClick()">
+    Cancelar
+  </button>
+  <button mat-raised-button color="primary" (click)="onSave(name)">
+    Guardar
+  </button>
+</div>

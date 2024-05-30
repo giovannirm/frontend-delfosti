@@ -1,0 +1,135 @@
+// puntos de interrupción
+$layout-breakpoint-xxxxs: 240px
+$layout-breakpoint-xxxs: 280px
+$layout-breakpoint-xxs: 320px
+$layout-breakpoint-sm: 550px
+$layout-breakpoint-md: 768px
+$layout-breakpoint-lg: 992px
+$layout-breakpoint-xl: 1200px
+$layout-breakpoint-xxl: 1400px
+
+.container
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .login
+        background-color: #ffffff
+        border-radius: 0.5em
+        padding: 2em
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 1.5em
+        color: #5d6162
+        width: 30em
+
+        h1.title
+            font-weight: bold
+            color: #000000
+            text-align: center
+            font-size: 3em
+
+        .content-form
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            gap: 0.8em
+
+            .content-inputs
+                display: flex
+                flex-direction: column
+                width: 25em
+                gap: 1em
+        
+                .input
+                    display: flex
+                    flex-direction: column
+                    gap: 0.2em
+
+                    .input-img
+                        display: flex
+                        align-items: center
+                        position: relative
+                        width: 100%
+
+                        img
+                            width: 2em
+                            object-fit: cover
+                            position: absolute
+                            padding-bottom: 0.5em
+
+                        input
+                            padding: 0.5em
+                            padding-bottom: 1em
+                            border: none
+                            outline: 0
+                            border-bottom: 1px solid #5d6162
+                            padding-left: 2.5em
+                            width: 100%
+
+                        .user-img
+                            width: 1.5em
+
+        .forgot-pass
+            font-size: 1.2rem
+            cursor: pointer
+
+        .button
+            padding: 0.7em 1em
+            border-radius: 1em
+            width: 100%
+            color: #ffffff
+            border: none
+            background: #16236e
+            cursor: pointer
+            font-weight: bold
+            transition-property: font-size
+            transition-duration: 0.3s
+            transition-timing-function: linear
+        
+            &:hover
+                background: #ffffff
+                color: #16236e
+                outline: 1px solid #16236e
+
+            &:disabled
+                background-color: dimgrey
+                color: linen
+                opacity: 1
+                cursor: not-allowed
+                outline: 1px solid dimgrey
+                
+.input,
+.message-danger,
+.button
+    font-size: 1.5rem
+
+.message-danger
+    color: #a94442
+    background-color: #f2dede
+    border-color: #ebccd1
+    padding: 0.5em
+    border-radius: 0.5em
+    max-width: 25em
+
+.block
+    pointer-events: none
+    opacity: 0.5
+
+@media screen and (max-width: $layout-breakpoint-xxs) //antes 260px
+    .container .login
+        width: 23.5em
+    
+        .content-form .content-inputs
+            width: 19em
+
+    .input,
+    .message-danger,
+    .button,
+    .forgot-pass,
+    input
+        font-size: 1.2rem
+
+    .container .login h1.title
+        font-size: 2.4rem

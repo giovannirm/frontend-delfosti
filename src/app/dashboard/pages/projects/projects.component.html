@@ -1,0 +1,20 @@
+<div class="content-spinner" *ngIf="isLoading">
+  <app-spinner />
+</div>
+
+<ng-container *ngIf="!isLoading">
+  <div class="container">
+    <div class="custom-row">
+      <span class="center">Proyectos</span>
+      <ng-container *ngIf="isAdmin()">
+        <button mat-raised-button color="primary" (click)="openDialog()">Nuevo Proyecto</button>
+      </ng-container>
+    </div>
+
+    <div class="custom-row">
+      <ng-container *ngFor="let project of projects">
+        <app-project-card [project]="project"></app-project-card>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

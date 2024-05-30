@@ -1,0 +1,31 @@
+header
+    background-color: #7f8fef
+    font-size: 1.5rem
+
+    .wrap-header
+        height: 100%
+        padding: 1em
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        .logo
+            display: flex
+            place-items: center
+            max-width: calc(50% - 1em)
+
+            img
+                max-height: 3.5em
+                margin-right: .6em
+
+            .logo-name
+                font-weight: 700
+                color: white
+
+        .menu
+            &:hover
+                cursor: pointer
+
+@media screen and (max-width: 550px)
+    .logo-name
+        display: none
